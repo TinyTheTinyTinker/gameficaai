@@ -49,6 +49,10 @@ header img {
     width: 290px;
 }
 
+header button {
+    display: none;
+}
+
 .menu {
     width: 700px;
     display: flex;
@@ -80,6 +84,34 @@ header img {
     color:white;
     font-family: "Anta";
     font-size: 32px;
+}
+
+.conteudo-banner span {
+    display: block;
+    border-right: 6px solid var(--laranja-gamefica);
+    white-space: nowrap;
+    animation: digitando 2s steps(40, end), cursor 0.75s step-end infinite;
+}
+
+@keyframes digitando {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes cursor {
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--laranja-gamefica);
+    }
 }
 
 #sobre {
@@ -296,4 +328,255 @@ h2 {
 #contato form button:hover {
     background-color: #ad4929;
 
+}
+
+/* Placeholder */
+#contato form input::placeholder,
+#contato form textarea::placeholder {
+    color: #b9b9b9;
+}
+
+footer {
+    height: 290px;
+    background-color: var(--roxo-gamefica);
+}
+
+footer .container-grid {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.redes-sociais {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.redes-sociais p {
+    color: white;
+    font-family: "Anta";
+    font-size: 24px;
+}
+
+.icones-redes {
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icones-redes a {
+    color: white;
+}
+
+.icones-redes a:hover {
+    color: var(--laranja-gamefica);
+}
+
+@media screen and (max-width: 1300px) {
+    header {
+        position: relative;
+    }
+    
+    header button {
+        width: 50px;
+        display: unset;
+        background: none;
+        border: none;
+    }
+
+    header svg {
+        fill: white;
+    }
+
+    nav.menu {
+        height: 500px;
+        width: 350px;
+        flex-direction: column;
+        background-color: #000000f0;
+        position: absolute;
+        top: 165px;
+        right: 0px;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding: 0px 30px;
+    }
+
+    #sobre {
+        padding: 100px 15;
+    }
+
+    .card {
+        height: 320px;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .container-cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        height: 400px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 40%;
+    }
+
+    footer {
+        height: unset;
+    }
+
+    footer .container-grid {
+        padding: 80px;
+        flex-direction: column;
+    }
+
+    footer img {
+        margin-bottom: 100px;
+    }
+
+    footer p {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .redes-sociais {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        flex-basis: 45%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #sobre {
+        height: unset;
+        margin-bottom: 40px;
+    }
+
+    #sobre h2 {
+        margin-bottom: 50px;
+    }
+
+    #sobre p {
+        margin-bottom: 30px;
+    }
+
+    #cases, #contato {
+        margin-bottom: unset;
+    }
+
+    #portifolio a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .campo, .campo-textarea, #contato form button {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container-grid {
+        width: 200px;
+    }
+
+    header img {
+        width: 200px;
+    }
+
+    .banner {
+        background-size: cover;
+    }
+
+    .conteudo-banner p {
+        font-size: 24px;
+    }
+
+    nav.menu {
+        width: 100%;
+        display: none;
+    }
+
+    #sobre {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #sobre p {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    #cases.container-grid {
+        width: 100%;
+        margin: unset;
+    }
+
+    .container-cards {
+        flex-wrap: nowrap;
+        gap: 40px;
+        overflow-x: auto;
+    }
+
+    .card {
+        height: 400px;
+        width: 280px;
+        flex-basis: unset;
+    }
+
+    .card:nth-child(1) {
+        margin-left: 30px;
+    }
+
+    .card:last-child {
+        margin-right: 30px;
+    }
+
+    #portifolio {
+        margin-bottom: 0;
+    }
+
+    #contato {
+        padding-top: 150px;
+        background-color: var(--roxo-gamefica);
+        color: white;
+    }
+
+    #contato h2 {
+        margin-bottom: 0;
+    }
+
+    #contato form {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header img {
+        width: 160px;
+    }
+
+    header svg {
+        width: 40px;
+    }
+
+    .conteudo-banner p {
+        font-size: 20px;
+    }
+
+    footer img {
+        width: 200px;
+    }
 }
